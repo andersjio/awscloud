@@ -60,6 +60,7 @@
 ### Create account
 
 Create an AWS account
+AWS_PROFILE=createAccount
 
 ```bash
 aws organizations --profile <AWS_PROFILE> create-account \
@@ -77,3 +78,12 @@ Should return empty list when account(s) have been created
 
 ### Move Account to OU
 
+```bash
+aws organizations move-account --account-id <ACCOUNT_ID> --source-parent-id <ROOT_ACCOUNT_ID> --destination-parent-id <DESTINATION_ACCOUNT_ID> --profile <AWS_PROFILE>
+```
+
+### Close AWS account
+
+```bash
+aws organizations close-account --account-id <ACCOUNT_ID> --profile <AWS_PROFILE>
+```
